@@ -1,19 +1,21 @@
 import React from 'react';
 import './App.css';
-import Home from './pages/Home';
+import Home from './Home';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Search from '@material-ui/icons/Search';
+import SearchPage from './SearchPage';
 
 function App() {
   return (
+
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/search">
-            <h1>this is search page</h1>
-          </Route>
-          <Route path="/">
+          <Route path="/search" element={<SearchPage />} />
+          <Route path='/' element={<Home/>} />
+          {/* <Route path="/">
             <Home />
-          </Route>
+          </Route> */}
         </Routes>
       </Router>
     </div>
